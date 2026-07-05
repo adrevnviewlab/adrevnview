@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 72" role="img" aria-label="AdRevnView">
+  <path d="M32 4L8 18V50L8 68H20V50L20 44L32 52V4Z" fill="#2474BC"/>
+  <path d="M32 4L56 18V52L32 52V4Z" fill="#0F2D4A"/>
+  <path d="M20 26V44L32 52V34L20 26Z" fill="#2EC4E8"/>
+  <path d="M32 34V52L44 44V26L32 34Z" fill="#2474BC"/>
+  <rect x="38" y="46" width="7" height="7" fill="#2EC4E8"/>
+</svg>

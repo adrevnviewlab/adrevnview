@@ -1,7 +1,6 @@
 import { useCallback, useState } from "react";
-import { Link } from "react-router";
-import { ArrowLeft } from "lucide-react";
 import { SeoHead } from "@/components/seo/SeoHead";
+import { Logo } from "@/components/Logo";
 import type { IssueSeverity, SiteAuditReport } from "@/lib/seo/report";
 import { runFullAudit } from "@/lib/seo/report";
 import { downloadText, formatReportHtml, formatReportJson, formatReportMarkdown } from "@/lib/seo/report/formatReport";
@@ -113,10 +112,7 @@ export default function SeoReport() {
 
       <header className="border-b border-violet-900/20 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 text-slate-400 hover:text-white text-sm transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-            Adrevnview
-          </Link>
+          <Logo iconClassName="h-7 w-6" textClassName="h-5 w-auto" />
           <span className="text-xs text-slate-600">{SCAN_STEPS.length} scan phases · {report ? `${report.metrics.totalChecks} checks` : "ready"}</span>
         </div>
       </header>

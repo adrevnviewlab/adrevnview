@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown, ArrowRight, Star, MapPin, Phone, Mail, Play, Chec
 import { GoogleNfcSection } from "@/app/components/nfc/GoogleNfcSection";
 import { SeoHead } from "@/components/seo/SeoHead";
 import { DEFAULT_SEO, PAGES } from "@/lib/seo/siteConfig";
+import { Logo } from "@/components/Logo";
 import { VISIBLE_HOME_FAQ } from "@/lib/seo/structuredData";
 import { CLIENTS, getClientPath, getPortfolioByCategory, PORTFOLIO_TABS, type ClientCategory } from "@/lib/content/clients";
 
@@ -188,15 +189,7 @@ function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
-            <span className="text-white font-bold text-sm">AV</span>
-          </div>
-          <span style={{ fontFamily: "Manrope, sans-serif" }} className="text-white font-bold text-lg tracking-tight">
-            Adrevn<span className="text-violet-400">view</span>
-          </span>
-        </div>
+        <Logo />
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-1">
@@ -934,14 +927,7 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AV</span>
-              </div>
-              <span style={{ fontFamily: "Manrope, sans-serif" }} className="text-white font-bold text-lg tracking-tight">
-                Adrevn<span className="text-violet-400">view</span>
-              </span>
-            </div>
+            <Logo className="mb-4" iconClassName="h-8 w-7" textClassName="h-5 w-auto" />
             <p className="text-slate-500 text-sm leading-relaxed mb-5" style={{ fontFamily: "Inter, sans-serif" }}>
               Premium web design agency for B2B, B2C & enterprise brands.
             </p>

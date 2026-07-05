@@ -1,10 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Adrevnview logo">
-  <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8b5cf6"/>
-      <stop offset="100%" stop-color="#4f46e5"/>
-    </linearGradient>
-  </defs>
-  <rect width="128" height="128" rx="16" fill="url(#g)"/>
-  <text x="64" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#ffffff">AV</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" role="img" aria-label="AdRevnView logo">
+  <rect width="240" height="80" fill="#ffffff"/>
+  <g transform="translate(16 4)">
+    <path d="M32 4L8 18V50L8 68H20V50L20 44L32 52V4Z" fill="#2474BC"/>
+    <path d="M32 4L56 18V52L32 52V4Z" fill="#0F2D4A"/>
+    <path d="M20 26V44L32 52V34L20 26Z" fill="#2EC4E8"/>
+    <path d="M32 34V52L44 44V26L32 34Z" fill="#2474BC"/>
+    <rect x="38" y="46" width="7" height="7" fill="#2EC4E8"/>
+  </g>
+  <text x="88" y="50" font-family="Manrope, Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="-0.02em">
+    <tspan fill="#0F2D4A">Ad</tspan>
+    <tspan fill="#2EC4E8">R</tspan>
+    <tspan fill="#0F2D4A">e</tspan>
+    <tspan fill="#2EC4E8">v</tspan>
+    <tspan fill="#0F2D4A">n</tspan>
+    <tspan fill="#0F2D4A">View</tspan>
+  </text>
 </svg>

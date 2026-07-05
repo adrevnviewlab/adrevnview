@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { SeoHead } from "@/components/seo/SeoHead";
+import { Logo } from "@/components/Logo";
 import { PAGES } from "@/lib/seo/siteConfig";
 import { CLIENTS, getClientPath, PORTFOLIO_TABS } from "@/lib/content/clients";
 
@@ -15,14 +16,7 @@ export default function Work() {
             <ArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-sm bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
-              <span className="text-white font-bold text-xs">AV</span>
-            </div>
-            <span style={{ fontFamily: "Manrope, sans-serif" }} className="text-white font-bold text-sm">
-              Adrevn<span className="text-violet-400">view</span>
-            </span>
-          </Link>
+          <Logo iconClassName="h-7 w-6" textClassName="h-5 w-auto" />
         </div>
       </header>
 

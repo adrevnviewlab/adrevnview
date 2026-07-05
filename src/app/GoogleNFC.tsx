@@ -3,6 +3,7 @@ import { Star, Zap, Shield, RefreshCw, Smartphone, Check, ArrowRight, ChevronDow
 import { NfcReviewCard } from "@/app/components/nfc/NfcReviewCard";
 import { NfcTapDemo } from "@/app/components/nfc/NfcTapDemo";
 import { SeoHead } from "@/components/seo/SeoHead";
+import { Logo } from "@/components/Logo";
 import { PAGES } from "@/lib/seo/siteConfig";
 import "@/app/components/nfc/nfc-animations.css";
 
@@ -117,14 +118,7 @@ export default function GoogleNFC() {
 
       {/* ── Nav ── */}
       <nav className="border-b border-violet-900/20 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
-        <a href="/" className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-sm bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
-            <span className="text-white font-bold text-xs">AV</span>
-          </div>
-          <span style={{ fontFamily: "Manrope, sans-serif" }} className="text-white font-bold tracking-tight">
-            Adrevn<span className="text-violet-400">view</span>
-          </span>
-        </a>
+        <Logo iconClassName="h-7 w-6" textClassName="h-5 w-auto" />
         <button
           onClick={() => document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" })}
           className="px-5 py-2 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-sm font-semibold hover:from-violet-500 hover:to-indigo-500 transition-all"
