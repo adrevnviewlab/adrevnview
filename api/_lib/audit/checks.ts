@@ -1,4 +1,4 @@
-import type { AuditCheck, CheckCategory, CheckStatus, IssueSeverity, PageSnapshot, SiteFileSnapshot } from "./types";
+import type { AuditCheck, CheckCategory, CheckStatus, IssueSeverity, PageSnapshot, SiteFileSnapshot } from "./types.js";
 
 export const CATEGORY_LABELS: Record<CheckCategory, string> = {
   seo: "On-Page SEO",

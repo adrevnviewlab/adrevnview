@@ -1,9 +1,9 @@
-import { auditPage, auditSiteFiles, categoryScores, scoreChecks } from "./checks";
-import type { ActionItem, AIPlatform, AuditCheck, PageAuditResult, PlatformScore, SiteAuditReport, SiteFileSnapshot } from "./types";
+import { auditPage, auditSiteFiles, categoryScores, scoreChecks } from "./checks.js";
+import type { ActionItem, AIPlatform, AuditCheck, PageAuditResult, PlatformScore, SiteAuditReport, SiteFileSnapshot } from "./types.js";
 
-export { CATEGORY_LABELS, PILLAR_DESCRIPTIONS, scoreChecks, categoryScores } from "./checks";
-export { extractPageSnapshot, parseHtmlSnapshot } from "./extract";
-export { auditPage, auditSiteFiles } from "./checks";
+export { CATEGORY_LABELS, PILLAR_DESCRIPTIONS, scoreChecks, categoryScores } from "./checks.js";
+export { parseHtmlSnapshot } from "./extract.js";
+export { auditPage, auditSiteFiles } from "./checks.js";
 
 function summarize(checks: AuditCheck[]) {
   return {
