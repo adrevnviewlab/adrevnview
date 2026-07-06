@@ -6,7 +6,8 @@
   "functions": {
     "api/seo-audit.ts": {
       "maxDuration": 30,
-      "memory": 512
+      "memory": 512,
+      "includeFiles": "src/lib/seo/report/**"
     }
   },
   "rewrites": [

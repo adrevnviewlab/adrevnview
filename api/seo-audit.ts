@@ -1,12 +1,7 @@
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { runFullAudit } from "../src/lib/seo/report/runAudit";
 
 const MAX_PAGES = 8;
-
-const CORS_HEADERS = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
-};
 
 function normalizeInput(raw: string): string {
   let url = raw.trim();
@@ -26,49 +21,38 @@ function isValidAuditUrl(url: string): boolean {
   }
 }
 
-function jsonResponse(body: unknown, status = 200): Response {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: {
-      ...CORS_HEADERS,
-      "Content-Type": "application/json",
-      "Cache-Control": "no-store",
-    },
-  });
-}
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-export default async function handler(request: Request): Promise<Response> {
-  if (request.method === "OPTIONS") {
-    return new Response(null, { status: 204, headers: CORS_HEADERS });
+  if (req.method === "OPTIONS") {
+    return res.status(204).end();
   }
 
-  if (request.method !== "POST") {
-    return jsonResponse({ error: "Method not allowed. Use POST." }, 405);
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed. Use POST." });
   }
 
-  let body: { url?: string };
-  try {
-    body = (await request.json()) as { url?: string };
-  } catch {
-    return jsonResponse({ error: "Invalid JSON body." }, 400);
-  }
-
+  const body = typeof req.body === "string" ? JSON.parse(req.body || "{}") : req.body ?? {};
   const rawUrl = body.url;
+
   if (!rawUrl || typeof rawUrl !== "string") {
-    return jsonResponse({ error: "Missing url in request body." }, 400);
+    return res.status(400).json({ error: "Missing url in request body." });
   }
 
   const url = normalizeInput(rawUrl);
   if (!isValidAuditUrl(url)) {
-    return jsonResponse({ error: "Invalid or disallowed URL." }, 400);
+    return res.status(400).json({ error: "Invalid or disallowed URL." });
   }
 
   try {
     const report = await runFullAudit(url, { maxPages: MAX_PAGES });
-    return jsonResponse(report);
+    res.setHeader("Cache-Control", "no-store");
+    return res.status(200).json(report);
   } catch (err) {
     console.error("[seo-audit] failed:", err);
     const message = err instanceof Error ? err.message : "Audit failed";
-    return jsonResponse({ error: message }, 500);
+    return res.status(500).json({ error: message });
   }
 }
