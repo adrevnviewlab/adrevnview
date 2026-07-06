@@ -1,6 +1,6 @@
-import { buildReport, pageResultFromSnapshot, parseSitemapUrls } from "./analyze";
-import { parseHtmlSnapshot } from "./extract";
-import type { SiteAuditReport, SiteFileSnapshot } from "./types";
+import { buildReport, pageResultFromSnapshot, parseSitemapUrls } from "./analyze.js";
+import { parseHtmlSnapshot } from "./extract.js";
+import type { SiteAuditReport, SiteFileSnapshot } from "./types.js";
 
 export type AuditOptions = {
   maxPages?: number;
