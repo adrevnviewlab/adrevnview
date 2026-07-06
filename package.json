@@ -69,12 +69,10 @@
     "vaul": "1.1.2"
   },
   "devDependencies": {
-    "@sparticuz/chromium": "^133.0.0",
     "@tailwindcss/vite": "4.1.12",
     "@vercel/node": "^5.8.22",
     "@vitejs/plugin-react": "4.7.0",
     "playwright": "^1.55.0",
-    "playwright-core": "^1.55.0",
     "tailwindcss": "4.1.12",
     "vite": "6.3.5"
   },

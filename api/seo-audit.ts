@@ -1,4 +1,4 @@
-import { runFullAudit } from "../src/lib/seo/report/runAudit.js";
+import { runFullAudit } from "../src/lib/seo/report/runAudit";
 
 const MAX_PAGES = 8;
 
