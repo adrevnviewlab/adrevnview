@@ -47,8 +47,8 @@ function Button({
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean;
   }) {
-  const { springMotion, borderBlink } = usePerformanceTier();
-  const classes = cn(buttonVariants({ variant, size, className }), borderBlink && "border-blink-once");
+  const { springMotion } = usePerformanceTier();
+  const classes = cn(buttonVariants({ variant, size, className }));
 
   if (asChild) {
     return <Slot data-slot="button" className={classes} {...props} />;

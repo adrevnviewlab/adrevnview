@@ -168,10 +168,9 @@ export function SpringLink({ className, children, ...props }: LinkProps & { clas
 
 export const SpringButton = forwardRef<HTMLButtonElement, SpringButtonProps>(
   ({ className, variant, size, asChild = false, children, ...props }, ref) => {
-    const { springMotion, borderBlink } = usePerformanceTier();
+    const { springMotion } = usePerformanceTier();
     const classes = cn(
       springButtonVariants({ variant, size, className }),
-      borderBlink && "border-blink-once",
       springColorTransition,
     );
 
@@ -213,10 +212,9 @@ type SpringNavLinkProps = LinkProps &
   };
 
 export function SpringNavLink({ className, variant, size, children, ...props }: SpringNavLinkProps) {
-  const { springMotion, borderBlink } = usePerformanceTier();
+  const { springMotion } = usePerformanceTier();
   const classes = cn(
     springButtonVariants({ variant, size, className }),
-    borderBlink && "border-blink-once",
     springColorTransition,
   );
 
