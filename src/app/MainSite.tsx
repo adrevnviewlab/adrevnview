@@ -191,16 +191,9 @@ function MarqueeLogos() {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
-      <FxBackground variant="hero" />
-      {/* Background glow — skipped on reduced/basic via perf tier CSS */}
-      <div className="absolute inset-0 pointer-events-none perf-heavy-blur">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-sky-700/10 blur-[120px]" />
-        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] rounded-full bg-cyan-600/8 blur-[100px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-sky-600/8 blur-[80px]" />
-      </div>
-
-      {/* Grid lines */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(14,165,233,1) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+      <FxBackground variant="streetview" />
+      {/* Soft vignette so hero text stays readable */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-background/20 via-transparent to-background/80" />
 
       <div className="relative max-w-7xl mx-auto px-6 text-center">
         {/* Award badge */}
