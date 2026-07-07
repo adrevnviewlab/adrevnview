@@ -72,7 +72,7 @@ function NfcWaves({ active }: { active?: boolean }) {
         />
       ))}
       <div className="relative z-10 w-9 h-9 rounded-full bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-sky-900/50">
-        <Wifi className="w-4 h-4 text-foreground rotate-90" />
+        <Wifi className="w-4 h-4 text-white rotate-90" />
       </div>
     </div>
   );
@@ -95,7 +95,7 @@ function CardFront({ size, tapping }: { size: "sm" | "md" | "lg"; tapping?: bool
                 <Star key={i} className={`${compact ? "w-2.5 h-2.5" : "w-3.5 h-3.5"} fill-amber-400 text-amber-400`} />
               ))}
             </div>
-            <p className={`text-sky-300/80 font-medium ${compact ? "text-[9px]" : "text-xs"}`} style={{ fontFamily: "Manrope, sans-serif" }}>
+            <p className={`text-sky-200 font-medium ${compact ? "text-[9px]" : "text-xs"}`} style={{ fontFamily: "Manrope, sans-serif" }}>
               Google Reviews
             </p>
           </div>
@@ -103,19 +103,19 @@ function CardFront({ size, tapping }: { size: "sm" | "md" | "lg"; tapping?: bool
 
         <div className="flex flex-col items-center gap-2">
           <NfcWaves active={tapping} />
-          <p className={`font-bold text-foreground tracking-wide ${compact ? "text-sm" : "text-lg"}`} style={{ fontFamily: "Manrope, sans-serif" }}>
+          <p className={`font-bold text-white tracking-wide ${compact ? "text-sm" : "text-lg"}`} style={{ fontFamily: "Manrope, sans-serif" }}>
             Tap to Review
           </p>
-          <p className={`text-muted-foreground text-center ${compact ? "text-[9px] max-w-[9rem]" : "text-xs max-w-[12rem]"}`}>
+          <p className={`text-sky-200/75 text-center ${compact ? "text-[9px] max-w-[9rem]" : "text-xs max-w-[12rem]"}`}>
             Hold your phone near the card
           </p>
         </div>
 
         <div className="flex items-center justify-between">
-          <span className={`text-sky-400/70 font-semibold ${compact ? "text-[8px]" : "text-[10px]"} tracking-widest uppercase`}>
+          <span className={`text-sky-300 font-semibold ${compact ? "text-[8px]" : "text-[10px]"} tracking-widest uppercase`}>
             Adrevnview
           </span>
-          <div className={`flex gap-1 ${compact ? "text-[8px]" : "text-[10px]"} text-muted-foreground`}>
+          <div className={`flex gap-1 ${compact ? "text-[8px]" : "text-[10px]"} text-sky-200/70`}>
             <span>NFC</span>
             <span>·</span>
             <span>QR</span>
@@ -135,10 +135,10 @@ function CardBack({ size }: { size: "sm" | "md" | "lg" }) {
         <div className={compact ? "w-24" : "w-32"}>
           <QrPattern />
         </div>
-        <p className={`text-muted-foreground text-center ${compact ? "text-[9px]" : "text-xs"}`}>
+        <p className={`text-sky-200/75 text-center ${compact ? "text-[9px]" : "text-xs"}`}>
           Scan if NFC is unavailable
         </p>
-        <div className={`flex items-center gap-2 ${compact ? "text-[8px]" : "text-[10px]"} text-sky-400/60`}>
+        <div className={`flex items-center gap-2 ${compact ? "text-[8px]" : "text-[10px]"} text-sky-300/80`}>
           <Wifi className={`${compact ? "w-2.5 h-2.5" : "w-3 h-3"} rotate-90`} />
           <span>Pre-programmed to your review page</span>
         </div>
@@ -202,7 +202,7 @@ export function NfcReviewCard({
               e.stopPropagation();
               handleTapDemo();
             }}
-            className="px-4 py-1.5 rounded-full border border-sky-500/40 bg-sky-900/30 text-sky-300 text-xs font-semibold hover:bg-sky-800/40 transition-colors"
+            className="px-4 py-1.5 rounded-full border border-sky-500/40 bg-sky-950/60 text-sky-100 text-xs font-semibold hover:bg-sky-900/70 transition-colors"
             style={{ fontFamily: "Manrope, sans-serif" }}
           >
             Simulate NFC tap

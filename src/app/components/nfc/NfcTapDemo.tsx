@@ -38,7 +38,7 @@ export function NfcTapDemo() {
             phase === "review"
               ? "border-emerald-500/40 bg-emerald-900/20 text-emerald-300"
               : isActive
-                ? "border-sky-500/50 bg-sky-900/30 text-sky-200"
+                ? "border-sky-500/50 bg-sky-600/15 text-sky-700 dark:text-sky-200"
                 : "border-sky-900/30 bg-card text-muted-foreground"
           }`}
           style={{ fontFamily: "Inter, sans-serif" }}
@@ -96,7 +96,7 @@ export function NfcTapDemo() {
         type="button"
         onClick={runDemo}
         disabled={isActive}
-        className="w-full mt-2 py-3 rounded-xl border border-sky-500/30 bg-sky-900/20 text-sky-200 text-sm font-semibold hover:bg-sky-800/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+        className="w-full mt-2 py-3 rounded-xl border border-border bg-secondary text-secondary-foreground text-sm font-semibold hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         style={{ fontFamily: "Manrope, sans-serif" }}
       >
         {phase === "idle" || phase === "review" ? "▶ Try the tap demo" : "Demo running…"}
