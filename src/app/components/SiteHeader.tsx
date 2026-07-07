@@ -5,6 +5,7 @@ import { Logo } from "@/components/Logo";
 import { SpringButton, SpringNavLink } from "@/components/SpringButton";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { NAV_LINKS } from "@/lib/content/navigation";
+import { ORG } from "@/lib/seo/siteConfig";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -79,11 +80,11 @@ export function SiteHeader() {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="tel:5125550147"
+            href={`tel:${ORG.phoneTel}`}
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            (512) 555-0147
+            {ORG.phoneDisplay}
           </a>
           <ThemeToggle />
           <SpringNavLink to="/contact" size="sm" className="rounded-full px-5 py-2.5 text-sm font-semibold" style={{ fontFamily: "Manrope, sans-serif" }}>

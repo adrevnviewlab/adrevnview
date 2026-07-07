@@ -8,7 +8,7 @@ import { FxBackground } from "@/components/fx/FxBackground";
 import { SpringAnchor, SpringLink, SpringPressable } from "@/components/SpringButton";
 import { SpringCard, SpringCardLink } from "@/components/SpringCard";
 import { SeoHead } from "@/components/seo/SeoHead";
-import { DEFAULT_SEO, PAGES } from "@/lib/seo/siteConfig";
+import { DEFAULT_SEO, ORG, PAGES } from "@/lib/seo/siteConfig";
 import { getServicePath } from "@/lib/content/services";
 import { VISIBLE_HOME_FAQ } from "@/lib/seo/structuredData";
 import { CLIENTS, getClientPath, getPortfolioByCategory, PORTFOLIO_TABS, type ClientCategory } from "@/lib/content/clients";
@@ -150,11 +150,11 @@ const MEDIA = ["Tech Brief", "Digital Weekly", "Business Pulse", "Market Insider
 
 const LOCATIONS = [
   {
-    city: "Austin",
+    city: "Long Island",
     tag: "HQ",
-    address: "1200 Innovation Blvd, Suite 400, Austin, TX 78701",
-    phone: "(512) 555-0147",
-    img: "https://images.unsplash.com/photo-1531218150217-54595bc2c934?w=700&h=420&fit=crop&auto=format",
+    address: `${ORG.address.streetAddress}, ${ORG.address.addressLocality}, ${ORG.address.addressRegion} ${ORG.address.postalCode}`,
+    phone: ORG.phoneDisplay,
+    img: "https://images.unsplash.com/photo-149644222-3268-e23eb24e107a?w=700&h=420&fit=crop&auto=format",
   },
 ];
 
@@ -734,8 +734,8 @@ function ContactSection() {
           </p>
           <div className="space-y-4">
             {[
-              { icon: Phone, text: "(512) 555-0147" },
-              { icon: Mail, text: "hello@adrevnview.com" },
+              { icon: Phone, text: ORG.phoneDisplay },
+              { icon: Mail, text: ORG.email },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-sky-900/40 flex items-center justify-center">

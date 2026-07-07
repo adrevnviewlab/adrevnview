@@ -6,13 +6,16 @@ export const ORG = {
   url: SITE_URL,
   logo: `${SITE_URL}/logo.svg`,
   email: "hello@adrevnview.com",
-  phone: "+1-512-555-0147",
+  phone: "+1-516-555-0147",
+  phoneDisplay: "(516) 555-0147",
+  phoneTel: "5165550147",
   foundingDate: "2013",
+  locationLabel: "Long Island, New York",
   address: {
-    streetAddress: "1200 Innovation Blvd, Suite 400",
-    addressLocality: "Austin",
-    addressRegion: "TX",
-    postalCode: "78701",
+    streetAddress: "1225 Franklin Ave, Suite 300",
+    addressLocality: "Garden City",
+    addressRegion: "NY",
+    postalCode: "11530",
     addressCountry: "US",
   },
   sameAs: [
@@ -42,7 +45,7 @@ export const DEFAULT_SEO = {
   description:
     "Adrevnview is a premium web design agency for B2B, B2C, and enterprise brands. Custom websites, branding, SEO, and Generative Engine Optimization (GEO) that drive measurable growth.",
   keywords:
-    "web design agency, custom web design, SEO agency, GEO optimization, digital marketing, eCommerce design, Austin web agency, B2B web design",
+    "web design agency, custom web design, SEO agency, GEO optimization, digital marketing, eCommerce design, Long Island web agency, New York web design, B2B web design",
 };
 
 export const PAGES = {

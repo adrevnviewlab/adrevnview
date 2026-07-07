@@ -44,7 +44,7 @@ const HOME_FAQ: FaqItem[] = [
   {
     question: "How do I contact Adrevnview?",
     answer:
-      "Contact Adrevnview at hello@adrevnview.com or (512) 555-0147. Request a free consultation at https://www.adrevnview.com/contact.",
+      "Contact Adrevnview at hello@adrevnview.com or (516) 555-0147. Request a free consultation at https://www.adrevnview.com/contact.",
   },
 ];
 

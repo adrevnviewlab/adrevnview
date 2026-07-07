@@ -7,8 +7,8 @@
 - Name: Adrevnview
 - Website: https://www.adrevnview.com
 - Email: hello@adrevnview.com
-- Phone: (512) 555-0147
-- Location: Austin, TX, USA
+- Phone: (516) 555-0147
+- Location: Long Island, New York, USA
 
 ## Services
 - Custom web design

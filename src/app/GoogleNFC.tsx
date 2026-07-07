@@ -59,7 +59,7 @@ const FAQS = [
 const REVIEWS = [
   {
     name: "James R.",
-    biz: "Lakeside Barbers, Austin",
+    biz: "Lakeside Barbers, Hicksville",
     stars: 5,
     text: "Got 40 new Google reviews in the first month. Customers love how easy it is — they just tap and go. Best $99 I've ever spent on marketing.",
   },
@@ -71,7 +71,7 @@ const REVIEWS = [
   },
   {
     name: "David K.",
-    biz: "Morning Brew Café, Austin",
+    biz: "Morning Brew Café, Garden City",
     stars: 5,
     text: "Dead simple setup, zero maintenance, and the reviews just keep coming in. Every small business owner needs one of these.",
   },

@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { SiteLayout } from "@/app/components/SiteLayout";
 import { SeoHead } from "@/components/seo/SeoHead";
-import { PAGES } from "@/lib/seo/siteConfig";
+import { ORG, PAGES } from "@/lib/seo/siteConfig";
 
 export default function About() {
   return (
@@ -42,7 +42,7 @@ export default function About() {
           <p className="text-foreground/80 text-sm leading-relaxed">
             Email: <a className="text-sky-300 hover:text-sky-200" href="mailto:hello@adrevnview.com">hello@adrevnview.com</a>
             <br />
-            Phone: <a className="text-sky-300 hover:text-sky-200" href="tel:5125550147">(512) 555-0147</a>
+            Phone: <a className="text-sky-300 hover:text-sky-200" href={`tel:${ORG.phoneTel}`}>{ORG.phoneDisplay}</a>
           </p>
           <Link
             to="/contact"

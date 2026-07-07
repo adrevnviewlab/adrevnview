@@ -43,13 +43,13 @@ export default function Contact() {
               <Phone className="w-5 h-5 text-sky-400 mt-1" />
               <div>
                 <p className="font-semibold">Phone</p>
-                <a href={`tel:${ORG.phone}`} className="text-sky-400 hover:text-sky-300">{ORG.phone}</a>
+                <a href={`tel:${ORG.phone}`} className="text-sky-400 hover:text-sky-300">{ORG.phoneDisplay}</a>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-sky-400 mt-1" />
               <div>
-                <p className="font-semibold">Austin Office</p>
+                <p className="font-semibold">Long Island Office</p>
                 <p className="text-muted-foreground text-sm">{ORG.address.streetAddress}, {ORG.address.addressLocality}, {ORG.address.addressRegion} {ORG.address.postalCode}</p>
               </div>
             </div>
