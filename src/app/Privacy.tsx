@@ -1,9 +1,10 @@
+import { SiteLayout } from "@/app/components/SiteLayout";
 import { SeoHead } from "@/components/seo/SeoHead";
 import { PAGES, SITE_URL } from "@/lib/seo/siteConfig";
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen bg-[#06091a] text-white px-6 py-20" style={{ fontFamily: "Inter, sans-serif" }}>
+    <SiteLayout mainClassName="px-6 py-12">
       <SeoHead title={PAGES.privacy.title} description={PAGES.privacy.description} path={PAGES.privacy.path} />
       <div className="max-w-3xl mx-auto">
         <h1 className="text-5xl font-extrabold tracking-tight mb-6" style={{ fontFamily: "Manrope, sans-serif" }}>
@@ -55,7 +56,6 @@ export default function Privacy() {
           </section>
         </div>
       </div>
-    </div>
+    </SiteLayout>
   );
 }
-

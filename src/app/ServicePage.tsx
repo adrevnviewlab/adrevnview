@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router";
 import { ArrowRight, Check } from "lucide-react";
+import { SiteLayout } from "@/app/components/SiteLayout";
 import { SeoHead } from "@/components/seo/SeoHead";
-import { Logo } from "@/components/Logo";
 import { SERVICE_BY_SLUG } from "@/lib/content/services";
 import { SITE_URL } from "@/lib/seo/siteConfig";
 
@@ -11,27 +11,20 @@ export default function ServicePage() {
 
   if (!service) {
     return (
-      <div className="min-h-screen bg-[#06091a] text-white flex flex-col items-center justify-center px-6">
+      <SiteLayout mainClassName="px-6 py-20 flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold mb-4">Service not found</h1>
         <Link to="/" className="text-violet-400 hover:text-violet-300">← Back to home</Link>
-      </div>
+      </SiteLayout>
     );
   }
 
   const path = `/services/${slug}`;
 
   return (
-    <div className="min-h-screen bg-[#06091a] text-white" style={{ fontFamily: "Inter, sans-serif" }}>
+    <SiteLayout mainClassName="px-6 py-12">
       <SeoHead title={service.seoTitle} description={service.seoDescription} path={path} />
 
-      <header className="border-b border-violet-900/20 px-6 py-4">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link to="/"><Logo iconClassName="h-7 w-6" textClassName="h-5 w-auto" /></Link>
-          <Link to="/#contact" className="text-sm text-violet-400 hover:text-violet-300">Contact →</Link>
-        </div>
-      </header>
-
-      <main className="max-w-5xl mx-auto px-6 py-16">
+      <div className="max-w-5xl mx-auto">
         <p className="text-violet-400 text-xs font-semibold tracking-widest uppercase mb-3">{service.category.replace("-", " ")}</p>
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6" style={{ fontFamily: "Manrope, sans-serif" }}>{service.headline}</h1>
         <p data-geo-chunk="summary" className="text-slate-400 text-lg leading-relaxed mb-10 max-w-3xl">{service.intro}</p>
@@ -94,7 +87,7 @@ export default function ServicePage() {
           {" · "}
           <a href={SITE_URL} className="hover:text-slate-400">adrevnview.com</a>
         </p>
-      </main>
-    </div>
+      </div>
+    </SiteLayout>
   );
 }

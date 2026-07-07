@@ -1,9 +1,11 @@
+import { Link } from "react-router";
+import { SiteLayout } from "@/app/components/SiteLayout";
 import { SeoHead } from "@/components/seo/SeoHead";
 import { PAGES } from "@/lib/seo/siteConfig";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-[#06091a] text-white px-6 py-20" style={{ fontFamily: "Inter, sans-serif" }}>
+    <SiteLayout mainClassName="px-6 py-12">
       <SeoHead title={PAGES.about.title} description={PAGES.about.description} path={PAGES.about.path} />
       <div className="max-w-3xl mx-auto">
         <h1 className="text-5xl font-extrabold tracking-tight mb-6" style={{ fontFamily: "Manrope, sans-serif" }}>
@@ -42,9 +44,15 @@ export default function About() {
             <br />
             Phone: <a className="text-violet-300 hover:text-violet-200" href="tel:5125550147">(512) 555-0147</a>
           </p>
+          <Link
+            to="/contact"
+            className="inline-block mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 font-semibold text-sm"
+            style={{ fontFamily: "Manrope, sans-serif" }}
+          >
+            Request a consultation
+          </Link>
         </div>
       </div>
-    </div>
+    </SiteLayout>
   );
 }
-

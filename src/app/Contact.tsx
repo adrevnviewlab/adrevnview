@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { SiteLayout } from "@/app/components/SiteLayout";
 import { SeoHead } from "@/components/seo/SeoHead";
-import { Logo } from "@/components/Logo";
 import { ORG, PAGES } from "@/lib/seo/siteConfig";
 
 const FAQ = [
@@ -21,16 +21,10 @@ const FAQ = [
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-[#06091a] text-white" style={{ fontFamily: "Inter, sans-serif" }}>
-      <SeoHead title="Contact Adrevnview — Request a Quote" description={PAGES.about.description} path="/contact" />
+    <SiteLayout mainClassName="px-6 py-12">
+      <SeoHead title="Contact Adrevnview — Request a Quote" description={PAGES.contact.description} path="/contact" />
 
-      <header className="border-b border-violet-900/20 px-6 py-4">
-        <div className="max-w-5xl mx-auto">
-          <Link to="/"><Logo iconClassName="h-7 w-6" textClassName="h-5 w-auto" /></Link>
-        </div>
-      </header>
-
-      <main className="max-w-5xl mx-auto px-6 py-16">
+      <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>Contact Adrevnview</h1>
         <p data-geo-chunk="summary" className="text-slate-400 text-lg mb-10 max-w-2xl leading-relaxed">
           Tell us about your web design, development, SEO, or branding project. Our team will respond within one business day with next steps and a tailored proposal.
@@ -91,7 +85,7 @@ export default function Contact() {
             ))}
           </div>
         </section>
-      </main>
-    </div>
+      </div>
+    </SiteLayout>
   );
 }

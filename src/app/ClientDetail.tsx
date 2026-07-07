@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router";
-import { ArrowLeft, ArrowRight, ExternalLink, Check } from "lucide-react";
+import { ArrowRight, ExternalLink, Check } from "lucide-react";
+import { SiteLayout } from "@/app/components/SiteLayout";
 import { SeoHead } from "@/components/seo/SeoHead";
-import { Logo } from "@/components/Logo";
 import { CLIENTS, getClientBySlug, getClientPath } from "@/lib/content/clients";
 
 export default function ClientDetail() {
@@ -10,7 +10,7 @@ export default function ClientDetail() {
 
   if (!client) {
     return (
-      <div className="min-h-screen bg-[#06091a] text-white flex items-center justify-center px-6" style={{ fontFamily: "Inter, sans-serif" }}>
+      <SiteLayout mainClassName="px-6 py-20 flex flex-col items-center justify-center">
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>
             Client not found
@@ -19,7 +19,7 @@ export default function ClientDetail() {
             View all case studies
           </Link>
         </div>
-      </div>
+      </SiteLayout>
     );
   }
 
@@ -27,20 +27,10 @@ export default function ClientDetail() {
   const relatedClients = CLIENTS.filter((c) => c.slug !== client.slug && c.category === client.category).slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-[#06091a] text-white" style={{ fontFamily: "Inter, sans-serif" }}>
+    <SiteLayout mainClassName="px-6 py-12">
       <SeoHead title={client.seoTitle} description={client.seoDescription} path={path} />
 
-      <header className="border-b border-violet-900/20 bg-[#06091a]/95 backdrop-blur-md sticky top-0 z-40">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/work" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm">
-            <ArrowLeft className="w-4 h-4" />
-            All Case Studies
-          </Link>
-          <Logo iconClassName="h-7 w-6" textClassName="h-5 w-auto" />
-        </div>
-      </header>
-
-      <main className="max-w-4xl mx-auto px-6 py-16">
+      <div className="max-w-4xl mx-auto">
         <div className="mb-8">
           <span className="px-3 py-1 rounded-full bg-violet-600/30 text-violet-300 text-xs font-semibold">
             {client.tag}
@@ -215,7 +205,7 @@ export default function ClientDetail() {
             </div>
           </section>
         )}
-      </main>
-    </div>
+      </div>
+    </SiteLayout>
   );
 }

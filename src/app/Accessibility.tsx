@@ -1,9 +1,10 @@
+import { SiteLayout } from "@/app/components/SiteLayout";
 import { SeoHead } from "@/components/seo/SeoHead";
 import { PAGES } from "@/lib/seo/siteConfig";
 
 export default function Accessibility() {
   return (
-    <div className="min-h-screen bg-[#06091a] text-white px-6 py-20" style={{ fontFamily: "Inter, sans-serif" }}>
+    <SiteLayout mainClassName="px-6 py-12">
       <SeoHead title={PAGES.accessibility.title} description={PAGES.accessibility.description} path={PAGES.accessibility.path} />
       <div className="max-w-3xl mx-auto">
         <h1 className="text-5xl font-extrabold tracking-tight mb-6" style={{ fontFamily: "Manrope, sans-serif" }}>
@@ -42,7 +43,6 @@ export default function Accessibility() {
           </section>
         </div>
       </div>
-    </div>
+    </SiteLayout>
   );
 }
-

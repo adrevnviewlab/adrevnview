@@ -1,26 +1,16 @@
 import { Link } from "react-router";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import { SiteLayout } from "@/app/components/SiteLayout";
 import { SeoHead } from "@/components/seo/SeoHead";
-import { Logo } from "@/components/Logo";
 import { PAGES } from "@/lib/seo/siteConfig";
 import { CLIENTS, getClientPath, PORTFOLIO_TABS } from "@/lib/content/clients";
 
 export default function Work() {
   return (
-    <div className="min-h-screen bg-[#06091a] text-white" style={{ fontFamily: "Inter, sans-serif" }}>
+    <SiteLayout mainClassName="px-6 py-12">
       <SeoHead title={PAGES.work.title} description={PAGES.work.description} path={PAGES.work.path} />
 
-      <header className="border-b border-violet-900/20 bg-[#06091a]/95 backdrop-blur-md sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Link>
-          <Logo iconClassName="h-7 w-6" textClassName="h-5 w-auto" />
-        </div>
-      </header>
-
-      <main className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-14">
           <p className="text-violet-400 text-sm font-semibold tracking-widest uppercase mb-4">Client Work</p>
           <h1
@@ -107,7 +97,7 @@ export default function Work() {
             </section>
           );
         })}
-      </main>
-    </div>
+      </div>
+    </SiteLayout>
   );
 }
