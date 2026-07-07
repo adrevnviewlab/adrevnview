@@ -97,4 +97,22 @@ export const PAGES = {
     description:
       "Contact Adrevnview for custom web design, development, SEO, and branding. Email hello@adrevnview.com or request a free consultation.",
   },
+  services: {
+    path: "/services",
+    title: "Digital Agency Services | Adrevnview",
+    description:
+      "Full-service web design, development, SEO, GEO, branding, and digital marketing for B2B, B2C, and enterprise brands.",
+  },
+  industries: {
+    path: "/industries",
+    title: "Industries We Serve | Adrevnview",
+    description:
+      "Web design and digital marketing for healthcare, eCommerce, manufacturing, real estate, legal, financial services, and SaaS.",
+  },
+  blog: {
+    path: "/blog",
+    title: "Blog — Web Design, SEO & GEO Insights | Adrevnview",
+    description:
+      "Articles on custom web design, SEO, Generative Engine Optimization (GEO), eCommerce, and digital marketing.",
+  },
 } as const;

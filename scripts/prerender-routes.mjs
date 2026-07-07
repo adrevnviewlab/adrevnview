@@ -14,10 +14,16 @@ const STATIC_ROUTES = [
   "/googlenfc",
   "/about",
   "/work",
+  "/work/b2b",
+  "/work/b2c",
+  "/work/ecommerce",
   "/contact",
   "/privacy",
   "/accessibility",
   "/geo-report",
+  "/services",
+  "/industries",
+  "/blog",
   "/tagizo",
   "/axstart",
   "/cizher",
@@ -55,8 +61,16 @@ const SERVICE_SLUGS = [
 
 const INDUSTRY_SLUGS = ["healthcare", "ecommerce", "manufacturing", "real-estate", "legal", "financial", "technology"];
 
+const BLOG_SLUGS = [
+  "geo-vs-seo-2026",
+  "conversion-focused-web-design",
+  "shopify-speed-checklist",
+  "local-seo-long-island",
+];
+
 export const ROUTES = [
   ...STATIC_ROUTES.map((path) => ({ path, waitFor: "h1" })),
   ...SERVICE_SLUGS.map((slug) => ({ path: `/services/${slug}`, waitFor: "h1" })),
   ...INDUSTRY_SLUGS.map((slug) => ({ path: `/industries/${slug}`, waitFor: "h1" })),
+  ...BLOG_SLUGS.map((slug) => ({ path: `/blog/${slug}`, waitFor: "h1" })),
 ];

@@ -6,6 +6,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import {
+  BLOG_PAGES,
   CLIENT_PAGES,
   HOME_BODY,
   INDUSTRY_PAGES,
@@ -88,6 +89,12 @@ async function main() {
     const route = `/industries/${slug}`;
     const body = `<main><h1>${title}</h1><p data-geo-chunk="summary">${intro}</p><p>${description}</p><p><a href="/contact">Request a consultation</a></p></main>`;
     await writeRoute(baseHtml, route, { title: `${title} | Adrevnview`, description }, body);
+  }
+
+  for (const [slug, title, headline, description] of BLOG_PAGES) {
+    const route = `/blog/${slug}`;
+    const body = `<main><h1>${headline}</h1><p data-geo-chunk="summary">${description}</p><p><a href="/blog">Back to blog</a> · <a href="/contact">Contact Adrevnview</a></p></main>`;
+    await writeRoute(baseHtml, route, { title, description }, body);
   }
 
   for (const [slug, name, description] of CLIENT_PAGES) {

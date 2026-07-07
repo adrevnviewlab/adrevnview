@@ -9,6 +9,10 @@ const Accessibility = lazy(() => import("./Accessibility"));
 const SeoReport = lazy(() => import("./SeoReport"));
 const Work = lazy(() => import("./Work"));
 const ServicePage = lazy(() => import("./ServicePage"));
+const Services = lazy(() => import("./Services"));
+const Industries = lazy(() => import("./Industries"));
+const Blog = lazy(() => import("./Blog"));
+const BlogPost = lazy(() => import("./BlogPost"));
 const Contact = lazy(() => import("./Contact"));
 const IndustryPage = lazy(() => import("./IndustryPage"));
 const ClientDetail = lazy(() => import("./ClientDetail"));
@@ -41,6 +45,22 @@ export const router = createBrowserRouter([
   {
     path: "/work",
     Component: Work,
+  },
+  {
+    path: "/work/:category",
+    Component: Work,
+  },
+  {
+    path: "/blog",
+    Component: Blog,
+  },
+  {
+    path: "/blog/:slug",
+    Component: BlogPost,
+  },
+  {
+    path: "/services",
+    Component: Services,
   },
   {
     path: "/admin/login",
@@ -83,6 +103,10 @@ export const router = createBrowserRouter([
   {
     path: "/services/:slug",
     Component: ServicePage,
+  },
+  {
+    path: "/industries",
+    Component: Industries,
   },
   {
     path: "/industries/:slug",

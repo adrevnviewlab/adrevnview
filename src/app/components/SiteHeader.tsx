@@ -42,7 +42,29 @@ export function SiteHeader() {
               onMouseEnter={() => (link.sub?.length ? setActiveDropdown(link.label) : undefined)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              {link.href ? (
+              {link.sub?.length ? (
+                <>
+                  {link.href ? (
+                    <Link
+                      to={link.href}
+                      className="flex items-center gap-1 px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary/60"
+                      style={{ fontFamily: "Inter, sans-serif" }}
+                    >
+                      {link.label}
+                      <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      className="flex items-center gap-1 px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary/60"
+                      style={{ fontFamily: "Inter, sans-serif" }}
+                    >
+                      {link.label}
+                      <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                    </button>
+                  )}
+                </>
+              ) : link.href ? (
                 <Link
                   to={link.href}
                   className="flex items-center gap-1 px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary/60"
@@ -50,16 +72,7 @@ export function SiteHeader() {
                 >
                   {link.label}
                 </Link>
-              ) : (
-                <button
-                  type="button"
-                  className="flex items-center gap-1 px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary/60"
-                  style={{ fontFamily: "Inter, sans-serif" }}
-                >
-                  {link.label}
-                  {link.sub?.length ? <ChevronDown className="w-3.5 h-3.5 opacity-60" /> : null}
-                </button>
-              )}
+              ) : null}
               {link.sub?.length && activeDropdown === link.label ? (
                 <div className="absolute top-full left-0 mt-1 w-52 bg-card border border-border rounded-xl shadow-2xl shadow-black/20 overflow-hidden border-blink-once">
                   {link.sub.map((s) => (
@@ -109,6 +122,16 @@ export function SiteHeader() {
                   {link.label}
                 </p>
                 <div className="space-y-1 pl-2 border-l border-border">
+                  {link.href ? (
+                    <Link
+                      to={link.href}
+                      onClick={() => setOpen(false)}
+                      className="block text-sky-400 hover:text-sky-300 text-sm py-1.5 font-medium"
+                      style={{ fontFamily: "Inter, sans-serif" }}
+                    >
+                      All {link.label}
+                    </Link>
+                  ) : null}
                   {link.sub.map((s) => (
                     <Link
                       key={s.label}

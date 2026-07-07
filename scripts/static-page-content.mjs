@@ -104,6 +104,42 @@ export const STATIC_PAGES = [
     description: "Smart NFC + QR review card for local businesses. Customers tap to leave Google reviews instantly. $99 one-time, pre-programmed, lifetime guarantee.",
     body: `<main><h1>Google NFC Review Card</h1><p data-geo-chunk="summary">Get more 5-star Google reviews with a smart NFC and QR review card. Customers tap or scan to leave reviews instantly. $99 one-time, pre-programmed, lifetime guarantee from Adrevnview.</p><h2>How it works</h2><p>Hand customers a branded NFC card. They tap with their phone and land directly on your Google review page — no searching, no friction.</p><h2>Perfect for</h2><p>Restaurants, salons, gyms, dental offices, auto shops, and any local business that depends on Google reviews.</p></main>`,
   },
+  {
+    path: "/services",
+    title: "Digital Agency Services | Adrevnview",
+    description: "Full-service web design, development, SEO, GEO, branding, and digital marketing for B2B, B2C, and enterprise brands.",
+    body: `<main><h1>Our Services</h1><p data-geo-chunk="summary">Adrevnview is a full-service digital agency based on Long Island, New York. Custom web design, React development, Shopify eCommerce, SEO, GEO, and brand identity.</p><p><a href="/services/custom-web-design">Custom Web Design</a> · <a href="/services/react-development">Web Development</a> · <a href="/services/seo-services">SEO &amp; Marketing</a> · <a href="/contact">Contact us</a></p></main>`,
+  },
+  {
+    path: "/industries",
+    title: "Industries We Serve | Adrevnview",
+    description: "Web design, development, SEO, and GEO for healthcare, eCommerce, manufacturing, real estate, legal, financial services, and SaaS brands.",
+    body: `<main><h1>Industries We Serve</h1><p data-geo-chunk="summary">We design and build for regulated and competitive verticals where trust, clarity, and performance matter.</p><ul><li><a href="/industries/healthcare">Healthcare</a></li><li><a href="/industries/ecommerce">eCommerce</a></li><li><a href="/industries/technology">Technology &amp; SaaS</a></li></ul></main>`,
+  },
+  {
+    path: "/blog",
+    title: "Blog — Web Design, SEO & GEO Insights | Adrevnview",
+    description: "Articles on custom web design, SEO, Generative Engine Optimization (GEO), eCommerce, and digital marketing.",
+    body: `<main><h1>Adrevnview Blog</h1><p data-geo-chunk="summary">Practical guidance on web design, SEO, GEO, and eCommerce for marketing leaders and founders.</p><ul><li><a href="/blog/geo-vs-seo-2026">GEO vs SEO for Long Island Brands</a></li><li><a href="/blog/local-seo-long-island">Local SEO for Long Island Businesses</a></li></ul></main>`,
+  },
+  {
+    path: "/work/b2b",
+    title: "B2B Case Studies & Web Design | Adrevnview",
+    description: "B2B web design and development case studies — SaaS marketing sites, enterprise platforms, and conversion-focused experiences.",
+    body: `<main><h1>B2B Client Projects</h1><p data-geo-chunk="summary">B2B case studies from Adrevnview — SaaS platforms, enterprise websites, and conversion-focused digital experiences.</p><p><a href="/work">View all case studies</a></p></main>`,
+  },
+  {
+    path: "/work/b2c",
+    title: "B2C Case Studies & Brand Websites | Adrevnview",
+    description: "B2C brand websites and digital experiences built for consumer trust, storytelling, and measurable engagement.",
+    body: `<main><h1>B2C Client Projects</h1><p data-geo-chunk="summary">B2C brand websites and digital experiences from Adrevnview.</p><p><a href="/work">View all case studies</a></p></main>`,
+  },
+  {
+    path: "/work/ecommerce",
+    title: "eCommerce Case Studies & Shopify Projects | Adrevnview",
+    description: "eCommerce design and development portfolio — Shopify stores, retail brands, and conversion-optimized shopping experiences.",
+    body: `<main><h1>eCommerce Client Projects</h1><p data-geo-chunk="summary">eCommerce and Shopify case studies from Adrevnview.</p><p><a href="/work">View all case studies</a></p></main>`,
+  },
 ];
 
 export const SERVICE_PAGES = [
@@ -137,6 +173,13 @@ export const INDUSTRY_PAGES = [
   ["legal", "Legal Services Web Design", "Authoritative law firm websites that establish expertise and convert consultations.", "Law firms need websites that communicate authority and make it effortless to book consultations."],
   ["financial", "Financial Services Web Design", "Compliant, trustworthy websites for fintech, advisors, and financial institutions.", "Financial services websites must balance compliance, clarity, and conversion at every step."],
   ["technology", "Technology & SaaS Web Design", "Product-led websites for SaaS companies, dev tools, and technology brands.", "SaaS buyers evaluate your product through your website before they sign up. We design product-led marketing sites with clear value props and GEO-ready structure."],
+];
+
+export const BLOG_PAGES = [
+  ["geo-vs-seo-2026", "GEO vs SEO for Long Island Brands | Adrevnview Blog", "GEO vs SEO: What Long Island Brands Need in 2026", "Learn how GEO works alongside SEO for Long Island and New York brands."],
+  ["conversion-focused-web-design", "Conversion-Focused Web Design Patterns | Adrevnview Blog", "5 Conversion Patterns We Use on Every Homepage", "Five homepage conversion patterns for B2B and enterprise websites."],
+  ["shopify-speed-checklist", "Shopify Performance Checklist | Adrevnview Blog", "Shopify Speed Checklist for eCommerce Brands", "Technical checklist for faster Shopify storefronts."],
+  ["local-seo-long-island", "Local SEO for Long Island Businesses | Adrevnview Blog", "Local SEO Playbook for Long Island Businesses", "Local SEO strategies for Long Island businesses and the NYC metro."],
 ];
 
 export const CLIENT_PAGES = [

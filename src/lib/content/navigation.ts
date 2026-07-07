@@ -21,26 +21,29 @@ export type NavLink = {
 export const NAV_LINKS: NavLink[] = [
   {
     label: "Services",
+    href: "/services",
     sub: NAV_SERVICE_LINKS.map((s) => ({ label: s.label, href: getServicePath(s.slug) })),
   },
   {
     label: "Work",
+    href: "/work",
     sub: [
       { label: "Case Studies", href: "/work" },
-      { label: "B2B Projects", href: "/work#b2b" },
-      { label: "B2C Projects", href: "/work#b2c" },
-      { label: "eCommerce Projects", href: "/work#ecommerce" },
+      { label: "B2B Projects", href: "/work/b2b" },
+      { label: "B2C Projects", href: "/work/b2c" },
+      { label: "eCommerce Projects", href: "/work/ecommerce" },
     ],
   },
   {
     label: "Industries",
+    href: "/industries",
     sub: Object.entries(INDUSTRY_SLUGS).map(([label, slug]) => ({
       label,
       href: `/industries/${slug}`,
     })),
   },
   { label: "About", href: "/about" },
-  { label: "Blog", href: "/work" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
