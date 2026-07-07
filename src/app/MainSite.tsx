@@ -191,8 +191,8 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       <FxBackground variant="hero" />
-      {/* Background glow */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Background glow — skipped on reduced/basic via perf tier CSS */}
+      <div className="absolute inset-0 pointer-events-none perf-heavy-blur">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-sky-700/10 blur-[120px]" />
         <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] rounded-full bg-cyan-600/8 blur-[100px]" />
         <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-sky-600/8 blur-[80px]" />

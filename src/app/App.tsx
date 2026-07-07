@@ -1,6 +1,7 @@
 import { Suspense, useEffect } from "react";
 import { RouterProvider } from "react-router";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { PerformanceProvider } from "@/lib/performance";
 import { AuthProvider } from "@/lib/admin/auth";
 import { trackPageView } from "@/lib/analytics";
 import { router } from "./routes";
@@ -16,11 +17,13 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <AuthProvider>
-        <Suspense fallback={<div className="min-h-screen bg-background" />}>
-          <RouterProvider router={router} />
-        </Suspense>
-      </AuthProvider>
+      <PerformanceProvider>
+        <AuthProvider>
+          <Suspense fallback={<div className="min-h-screen bg-background" />}>
+            <RouterProvider router={router} />
+          </Suspense>
+        </AuthProvider>
+      </PerformanceProvider>
     </ThemeProvider>
   );
 }

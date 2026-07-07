@@ -194,6 +194,29 @@
   }
 }
 
+/* ─── Adaptive performance tiers ─── */
+[data-perf-tier="basic"] .border-blink,
+[data-perf-tier="basic"] .border-blink-once,
+[data-perf-tier="reduced"] .border-blink,
+[data-perf-tier="reduced"] .border-blink-once {
+  animation: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-perf-tier="basic"] .perf-heavy-blur,
+[data-perf-tier="reduced"] .perf-heavy-blur {
+  display: none !important;
+}
+
+[data-perf-tier="basic"] .animate-marquee {
+  animation: none !important;
+}
+
+[data-perf-tier="basic"] .perf-gpu-layer {
+  display: none !important;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
