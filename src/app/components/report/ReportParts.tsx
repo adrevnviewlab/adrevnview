@@ -11,6 +11,7 @@ import {
   Sparkles,
   XCircle,
 } from "lucide-react";
+import { SpringPressable } from "@/components/SpringButton";
 import type { AuditCheck, CheckCategory, IssueSeverity, SiteAuditReport } from "@/lib/seo/report/types";
 import { CATEGORY_LABELS } from "@/lib/seo/report/checks";
 
@@ -298,15 +299,15 @@ export function ExportBar({
 }) {
   return (
     <div className="flex flex-wrap gap-2">
-      <button onClick={onExportMd} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-sky-900/30 hover:bg-white/5 text-sm">
+      <SpringPressable onClick={onExportMd} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-sky-900/30 hover:bg-white/5 text-sm">
         <Download className="w-4 h-4" /> Markdown Report
-      </button>
-      <button onClick={onExportJson} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-sky-900/30 hover:bg-white/5 text-sm">
+      </SpringPressable>
+      <SpringPressable onClick={onExportJson} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-sky-900/30 hover:bg-white/5 text-sm">
         <FileJson className="w-4 h-4" /> JSON Data
-      </button>
-      <button onClick={onPrint} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-sky-900/30 hover:bg-white/5 text-sm">
+      </SpringPressable>
+      <SpringPressable onClick={onPrint} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-sky-900/30 hover:bg-white/5 text-sm">
         <Printer className="w-4 h-4" /> Print / PDF
-      </button>
+      </SpringPressable>
     </div>
   );
 }
@@ -353,14 +354,14 @@ export function ScannerHero({
               className="w-full rounded-xl bg-background border border-sky-900/40 pl-11 pr-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-sky-500/60"
             />
           </div>
-          <button
+          <SpringPressable
             onClick={onScan}
             disabled={loading || !url.trim()}
             className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-semibold hover:from-sky-500 hover:to-cyan-500 disabled:opacity-50 transition-all shrink-0"
             style={{ fontFamily: "Manrope, sans-serif" }}
           >
             {loading ? "Scanning…" : "Run Scan"}
-          </button>
+          </SpringPressable>
         </div>
         {loading && <div className="mt-6"><ScanProgress step={scanStep} progress={scanProgress} /></div>}
       </div>

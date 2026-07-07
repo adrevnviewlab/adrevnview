@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Check, Star } from "lucide-react";
+import { SpringPressable } from "@/components/SpringButton";
 import { NfcReviewCard } from "./NfcReviewCard";
 
 type DemoPhase = "idle" | "approaching" | "tapped" | "review";
@@ -92,7 +93,7 @@ export function NfcTapDemo() {
         )}
       </div>
 
-      <button
+      <SpringPressable
         type="button"
         onClick={runDemo}
         disabled={isActive}
@@ -100,7 +101,7 @@ export function NfcTapDemo() {
         style={{ fontFamily: "Manrope, sans-serif" }}
       >
         {phase === "idle" || phase === "review" ? "▶ Try the tap demo" : "Demo running…"}
-      </button>
+      </SpringPressable>
     </div>
   );
 }

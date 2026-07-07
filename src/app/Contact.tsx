@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { SpringPressable } from "@/components/SpringButton";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { SiteLayout } from "@/app/components/SiteLayout";
 import { SeoHead } from "@/components/seo/SeoHead";
@@ -68,9 +68,9 @@ export default function Contact() {
               <label className="text-sm text-muted-foreground block mb-1">Project details</label>
               <textarea rows={4} className="w-full px-4 py-3 rounded-xl bg-background border border-sky-900/30 text-foreground text-sm resize-none" placeholder="Goals, timeline, budget…" />
             </div>
-            <button type="button" className="w-full py-3 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 font-semibold" style={{ fontFamily: "Manrope, sans-serif" }}>
+            <SpringPressable type="button" className="w-full py-3 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-semibold" style={{ fontFamily: "Manrope, sans-serif" }}>
               Send message
-            </button>
+            </SpringPressable>
           </form>
         </div>
 

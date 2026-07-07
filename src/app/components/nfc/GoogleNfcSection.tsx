@@ -1,4 +1,5 @@
 import { ArrowRight, Check, Zap } from "lucide-react";
+import { SpringAnchor } from "@/components/SpringButton";
 import { NfcTapDemo } from "./NfcTapDemo";
 import "./nfc-animations.css";
 
@@ -47,20 +48,20 @@ export function GoogleNfcSection() {
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <SpringAnchor
                 href="/googlenfc#buy"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-bold text-base hover:from-sky-500 hover:to-cyan-500 transition-all shadow-xl shadow-sky-900/50"
+                className="gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-bold text-base hover:from-sky-500 hover:to-cyan-500 transition-all shadow-xl shadow-sky-900/50"
                 style={{ fontFamily: "Manrope, sans-serif" }}
               >
                 Get Your Card — $99 <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
+              </SpringAnchor>
+              <SpringAnchor
                 href="/googlenfc"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-sky-500/30 text-foreground font-semibold text-base hover:bg-sky-900/20 transition-all"
+                className="gap-2 px-8 py-4 rounded-full border border-sky-500/30 text-foreground font-semibold text-base hover:bg-sky-900/20 transition-all"
                 style={{ fontFamily: "Manrope, sans-serif" }}
               >
                 View Full Product Page
-              </a>
+              </SpringAnchor>
             </div>
           </div>
 

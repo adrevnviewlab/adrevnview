@@ -5,7 +5,7 @@ import { GoogleNfcSection } from "@/app/components/nfc/GoogleNfcSection";
 import { SiteFooter } from "@/app/components/SiteFooter";
 import { SiteHeader } from "@/app/components/SiteHeader";
 import { FxBackground } from "@/components/fx/FxBackground";
-import { SpringButton } from "@/components/SpringButton";
+import { SpringAnchor, SpringLink, SpringPressable } from "@/components/SpringButton";
 import { SpringCard, SpringCardLink } from "@/components/SpringCard";
 import { SeoHead } from "@/components/seo/SeoHead";
 import { DEFAULT_SEO, PAGES } from "@/lib/seo/siteConfig";
@@ -235,22 +235,22 @@ function Hero() {
             Member portal + backend processing + gym ops management, plus lead generation and SEO tools — built to help gyms grow and retain members.
           </p>
           <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
+            <SpringAnchor
               href="https://mymatflow.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-sm hover:from-emerald-400 hover:to-teal-400 transition-all shadow-xl shadow-emerald-900/30 inline-flex items-center gap-2"
+              className="px-7 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-sm hover:from-emerald-400 hover:to-teal-400 transition-all shadow-xl shadow-emerald-900/30 gap-2"
               style={{ fontFamily: "Manrope, sans-serif" }}
             >
               See Matflow <ArrowRight className="w-4 h-4" />
-            </a>
-            <a
+            </SpringAnchor>
+            <SpringAnchor
               href="#contact"
-              className="px-7 py-3 rounded-full border border-sky-500/30 text-foreground font-semibold text-sm hover:bg-sky-900/20 transition-all inline-flex items-center gap-2"
+              className="px-7 py-3 rounded-full border border-sky-500/30 text-foreground font-semibold text-sm hover:bg-sky-900/20 transition-all gap-2"
               style={{ fontFamily: "Manrope, sans-serif" }}
             >
               Get a Demo
-            </a>
+            </SpringAnchor>
           </div>
         </div>
 
@@ -270,12 +270,12 @@ function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/contact" className="px-8 py-4 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-bold text-base hover:from-sky-500 hover:to-cyan-500 transition-all shadow-xl shadow-sky-900/50 flex items-center gap-2" style={{ fontFamily: "Manrope, sans-serif" }}>
+          <SpringLink to="/contact" className="px-8 py-4 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-bold text-base hover:from-sky-500 hover:to-cyan-500 transition-all shadow-xl shadow-sky-900/50 gap-2" style={{ fontFamily: "Manrope, sans-serif" }}>
             Request a Quote <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link to="/work" className="px-8 py-4 rounded-full border border-sky-500/30 text-foreground font-semibold text-base hover:bg-sky-900/20 transition-all flex items-center gap-2" style={{ fontFamily: "Manrope, sans-serif" }}>
+          </SpringLink>
+          <SpringLink to="/work" className="px-8 py-4 rounded-full border border-sky-500/30 text-foreground font-semibold text-base hover:bg-sky-900/20 transition-all gap-2" style={{ fontFamily: "Manrope, sans-serif" }}>
             <Play className="w-4 h-4 fill-current" /> See Our Work
-          </Link>
+          </SpringLink>
         </div>
       </div>
     </section>
@@ -384,7 +384,7 @@ function PortfolioSection() {
           </div>
           <div className="flex gap-1 p-1 rounded-full border border-sky-900/30 bg-background">
             {PORTFOLIO_TABS.map((tab) => (
-              <button
+              <SpringPressable
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
@@ -395,7 +395,7 @@ function PortfolioSection() {
                 style={{ fontFamily: "Manrope, sans-serif" }}
               >
                 {tab}
-              </button>
+              </SpringPressable>
             ))}
           </div>
         </div>
@@ -553,10 +553,11 @@ function TestimonialsSection() {
 
         <div className="flex justify-center gap-3 mt-10">
           {TESTIMONIALS.map((_, i) => (
-            <button
+            <SpringPressable
               key={i}
               onClick={() => setActive(i)}
               className={`transition-all rounded-full ${i === active ? "w-8 h-2 bg-sky-500" : "w-2 h-2 bg-sky-900/60 hover:bg-sky-700/60"}`}
+              aria-label={`Show testimonial ${i + 1}`}
             />
           ))}
         </div>
@@ -580,7 +581,7 @@ function AwardsSection() {
 
         <div className="flex justify-center gap-1 p-1 rounded-full border border-sky-900/30 bg-card w-fit mx-auto mb-12">
           {(["Awards", "Media", "Expertise"] as const).map((t) => (
-            <button
+            <SpringPressable
               key={t}
               onClick={() => setTab(t)}
               className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all ${
@@ -589,7 +590,7 @@ function AwardsSection() {
               style={{ fontFamily: "Manrope, sans-serif" }}
             >
               {t}
-            </button>
+            </SpringPressable>
           ))}
         </div>
 
@@ -644,7 +645,7 @@ function LocationsSection() {
 
         <div className="flex justify-center gap-1 p-1 rounded-full border border-sky-900/30 bg-background w-fit mx-auto mb-10">
           {LOCATIONS.map((l, i) => (
-            <button
+            <SpringPressable
               key={l.city}
               onClick={() => setActiveCity(i)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
@@ -654,7 +655,7 @@ function LocationsSection() {
             >
               {l.city}
               {l.tag && <span className="ml-1 text-xs text-sky-300">{l.tag}</span>}
-            </button>
+            </SpringPressable>
           ))}
         </div>
 
@@ -672,9 +673,9 @@ function LocationsSection() {
               <Phone className="w-5 h-5 text-sky-400 shrink-0" />
               <a href={`tel:${loc.phone}`} className="text-foreground/80 text-base hover:text-foreground transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>{loc.phone}</a>
             </div>
-            <button className="mt-4 px-7 py-3 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-semibold hover:from-sky-500 hover:to-cyan-500 transition-all" style={{ fontFamily: "Manrope, sans-serif" }}>
+            <SpringPressable className="mt-4 px-7 py-3 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-semibold hover:from-sky-500 hover:to-cyan-500 transition-all" style={{ fontFamily: "Manrope, sans-serif" }}>
               Get Directions
-            </button>
+            </SpringPressable>
           </div>
         </div>
       </div>
@@ -795,9 +796,9 @@ function ContactSection() {
               style={{ fontFamily: "Inter, sans-serif" }}
             />
           </div>
-          <button className="w-full py-4 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-bold text-base hover:from-sky-500 hover:to-cyan-500 transition-all shadow-xl shadow-sky-900/40" style={{ fontFamily: "Manrope, sans-serif" }}>
+          <SpringPressable className="w-full py-4 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-bold text-base hover:from-sky-500 hover:to-cyan-500 transition-all shadow-xl shadow-sky-900/40" style={{ fontFamily: "Manrope, sans-serif" }}>
             Request a Quote — Free Consultation
-          </button>
+          </SpringPressable>
         </div>
       </div>
     </section>

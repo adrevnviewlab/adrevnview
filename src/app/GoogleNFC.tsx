@@ -5,6 +5,7 @@ import { NfcTapDemo } from "@/app/components/nfc/NfcTapDemo";
 import { SeoHead } from "@/components/seo/SeoHead";
 import { Logo } from "@/components/Logo";
 import { SpringCard } from "@/components/SpringCard";
+import { SpringPressable } from "@/components/SpringButton";
 import { PAGES } from "@/lib/seo/siteConfig";
 import "@/app/components/nfc/nfc-animations.css";
 
@@ -120,13 +121,13 @@ export default function GoogleNFC() {
       {/* ── Nav ── */}
       <nav className="border-b border-sky-900/20 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
         <Logo iconClassName="h-7 w-6" textClassName="h-5 w-auto" />
-        <button
+        <SpringPressable
           onClick={() => document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" })}
           className="px-5 py-2 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white text-sm font-semibold hover:from-sky-500 hover:to-cyan-500 transition-all"
           style={{ fontFamily: "Manrope, sans-serif" }}
         >
           Buy Now — $99
-        </button>
+        </SpringPressable>
       </nav>
 
       {/* ── Hero ── */}
@@ -304,26 +305,26 @@ export default function GoogleNFC() {
             <div className="flex items-center justify-center gap-4 mb-8">
               <span className="text-muted-foreground text-sm">Quantity</span>
               <div className="flex items-center gap-3 border border-sky-900/30 rounded-full px-2 py-1">
-                <button
+                <SpringPressable
                   onClick={() => setQty(Math.max(1, qty - 1))}
                   className="w-7 h-7 rounded-full flex items-center justify-center text-sky-400 hover:bg-sky-900/40 transition-colors font-bold text-lg"
-                >−</button>
+                >−</SpringPressable>
                 <span className="text-foreground font-semibold w-6 text-center" style={{ fontFamily: "Manrope, sans-serif" }}>{qty}</span>
-                <button
+                <SpringPressable
                   onClick={() => setQty(qty + 1)}
                   className="w-7 h-7 rounded-full flex items-center justify-center text-sky-400 hover:bg-sky-900/40 transition-colors font-bold text-lg"
-                >+</button>
+                >+</SpringPressable>
               </div>
               <span className="text-muted-foreground text-sm font-semibold">${(99 * qty).toLocaleString()} total</span>
             </div>
 
-            <button
-              className="w-full py-4 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-bold text-lg hover:from-sky-500 hover:to-cyan-500 transition-all shadow-xl shadow-sky-900/50 flex items-center justify-center gap-2"
+            <SpringPressable
+              className="w-full py-4 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-bold text-lg hover:from-sky-500 hover:to-cyan-500 transition-all shadow-xl shadow-sky-900/50 gap-2"
               style={{ fontFamily: "Manrope, sans-serif" }}
               onClick={() => alert("Payment coming soon — check back shortly!")}
             >
               Buy Now — ${(99 * qty).toLocaleString()} <ArrowRight className="w-5 h-5" />
-            </button>
+            </SpringPressable>
 
             <p className="text-muted-foreground text-xs mt-4">Secure checkout · SSL encrypted · Lifetime guarantee</p>
           </div>
@@ -355,13 +356,13 @@ export default function GoogleNFC() {
           Start collecting reviews today
         </h2>
         <p className="text-muted-foreground text-sm mb-8">Join 200+ businesses growing their Google reputation with one smart card.</p>
-        <button
+        <SpringPressable
           onClick={() => document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" })}
           className="px-10 py-4 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-bold text-base hover:from-sky-500 hover:to-cyan-500 transition-all shadow-xl shadow-sky-900/50"
           style={{ fontFamily: "Manrope, sans-serif" }}
         >
           Get Your NFC Card — $99
-        </button>
+        </SpringPressable>
       </div>
 
       <footer className="bg-muted border-t border-sky-900/20 py-6 px-6 text-center">

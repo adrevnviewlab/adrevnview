@@ -3,6 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { SiteLayout } from "@/app/components/SiteLayout";
 import { SeoHead } from "@/components/seo/SeoHead";
 import { SpringCard } from "@/components/SpringCard";
+import { SpringLink } from "@/components/SpringButton";
 import { SERVICE_BY_SLUG } from "@/lib/content/services";
 import { SITE_URL } from "@/lib/seo/siteConfig";
 
@@ -72,13 +73,13 @@ export default function ServicePage() {
             <h2 className="text-xl font-bold text-foreground mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>Ready to start?</h2>
             <p className="text-muted-foreground text-sm">Request a free consultation for {service.title.toLowerCase()}.</p>
           </div>
-          <Link
+          <SpringLink
             to="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-semibold shrink-0"
+            className="gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-semibold shrink-0"
             style={{ fontFamily: "Manrope, sans-serif" }}
           >
             Get a quote <ArrowRight className="w-4 h-4" />
-          </Link>
+          </SpringLink>
         </SpringCard>
 
         <p className="text-muted-foreground text-xs mt-8">

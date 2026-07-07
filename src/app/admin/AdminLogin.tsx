@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router";
 import { Lock } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { SpringPressable } from "@/components/SpringButton";
 import { useAuth } from "@/lib/admin/auth";
 
 export default function AdminLogin() {
@@ -71,13 +72,13 @@ export default function AdminLogin() {
 
             {error && <p className="text-red-400 text-sm">{error}</p>}
 
-            <button
+            <SpringPressable
               type="submit"
               className="w-full py-2.5 rounded-lg bg-gradient-to-r from-sky-600 to-cyan-600 text-white font-semibold hover:from-sky-500 hover:to-cyan-500 transition-all"
               style={{ fontFamily: "Manrope, sans-serif" }}
             >
               Sign In
-            </button>
+            </SpringPressable>
           </form>
         </div>
 

@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { SeoHead } from "@/components/seo/SeoHead";
+import { SpringPressable } from "@/components/SpringButton";
 import { Logo } from "@/components/Logo";
 import type { IssueSeverity, SiteAuditReport } from "@/lib/seo/report/types";
 import { downloadText, formatReportHtml, formatReportJson, formatReportMarkdown } from "@/lib/seo/report/formatReport";
@@ -188,7 +189,7 @@ export default function SeoReport() {
 
             <div className="flex gap-1 overflow-x-auto border-b border-sky-900/20 mb-6 pb-px">
               {tabs.map((t) => (
-                <button
+                <SpringPressable
                   key={t.id}
                   onClick={() => setTab(t.id)}
                   className={`px-4 py-2.5 text-sm font-medium rounded-t-lg whitespace-nowrap transition-colors ${
@@ -201,7 +202,7 @@ export default function SeoReport() {
                   {t.count !== undefined && (
                     <span className="ml-1.5 text-xs opacity-60">({t.count})</span>
                   )}
-                </button>
+                </SpringPressable>
               ))}
             </div>
 
@@ -226,7 +227,7 @@ export default function SeoReport() {
               <div>
                 <div className="flex gap-2 mb-4">
                   {(["all", "critical", "warning", "notice"] as const).map((f) => (
-                    <button
+                    <SpringPressable
                       key={f}
                       onClick={() => setIssueFilter(f)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium capitalize ${
@@ -234,7 +235,7 @@ export default function SeoReport() {
                       }`}
                     >
                       {f}
-                    </button>
+                    </SpringPressable>
                   ))}
                 </div>
                 <IssueTable issues={report.issues} filter={issueFilter} />

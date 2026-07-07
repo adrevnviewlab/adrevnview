@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Star, Wifi } from "lucide-react";
+import { SpringPressable } from "@/components/SpringButton";
 
 type NfcReviewCardProps = {
   size?: "sm" | "md" | "lg";
@@ -196,7 +197,7 @@ export function NfcReviewCard({
 
       {flippable && showControls && (
         <div className="mt-4 flex flex-col items-center gap-2">
-          <button
+          <SpringPressable
             type="button"
             onClick={(e) => {
               e.stopPropagation();
@@ -206,7 +207,7 @@ export function NfcReviewCard({
             style={{ fontFamily: "Manrope, sans-serif" }}
           >
             Simulate NFC tap
-          </button>
+          </SpringPressable>
           <p className="text-muted-foreground text-xs">Click card to flip · Tap button to animate</p>
         </div>
       )}
