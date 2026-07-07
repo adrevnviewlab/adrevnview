@@ -8,14 +8,14 @@ import { usePerformanceTier } from "@/lib/performance";
 
 export const springButtonTransition = {
   type: "spring" as const,
-  stiffness: 420,
-  damping: 22,
-  mass: 0.85,
+  stiffness: 260,
+  damping: 16,
+  mass: 1.05,
 };
 
 export const springButtonInteraction = {
-  whileHover: { scale: 1.04, y: -1 },
-  whileTap: { scale: 0.96, y: 0 },
+  whileHover: { scale: 1.05, y: -2 },
+  whileTap: { scale: 0.97, y: 0 },
 };
 
 const pressableBaseClass =
