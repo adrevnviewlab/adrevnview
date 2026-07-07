@@ -4,6 +4,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { SpringButton, SpringNavLink } from "@/components/SpringButton";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { MusicToggle } from "@/components/MusicToggle";
 import { NAV_LINKS } from "@/lib/content/navigation";
 
 export function SiteHeader() {
@@ -85,6 +86,7 @@ export function SiteHeader() {
           >
             (512) 555-0147
           </a>
+          <MusicToggle />
           <ThemeToggle />
           <SpringNavLink to="/contact" size="sm" className="rounded-full px-5 py-2.5 text-sm font-semibold" style={{ fontFamily: "Manrope, sans-serif" }}>
             Request a Quote
@@ -92,6 +94,7 @@ export function SiteHeader() {
         </div>
 
         <div className="flex lg:hidden items-center gap-2">
+          <MusicToggle />
           <ThemeToggle />
           <button type="button" className="text-foreground" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

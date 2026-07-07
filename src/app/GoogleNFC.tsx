@@ -4,6 +4,8 @@ import { NfcReviewCard } from "@/app/components/nfc/NfcReviewCard";
 import { NfcTapDemo } from "@/app/components/nfc/NfcTapDemo";
 import { SeoHead } from "@/components/seo/SeoHead";
 import { Logo } from "@/components/Logo";
+import { MusicToggle } from "@/components/MusicToggle";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { SpringCard } from "@/components/SpringCard";
 import { SpringPressable } from "@/components/SpringButton";
 import { PAGES } from "@/lib/seo/siteConfig";
@@ -119,15 +121,19 @@ export default function GoogleNFC() {
       />
 
       {/* ── Nav ── */}
-      <nav className="border-b border-sky-900/20 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
+      <nav className="border-b border-sky-900/20 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto gap-3">
         <Logo iconClassName="h-7 w-6" textClassName="h-5 w-auto" />
-        <SpringPressable
+        <div className="flex items-center gap-2">
+          <MusicToggle />
+          <ThemeToggle />
+          <SpringPressable
           onClick={() => document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" })}
           className="px-5 py-2 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white text-sm font-semibold hover:from-sky-500 hover:to-cyan-500 transition-all"
           style={{ fontFamily: "Manrope, sans-serif" }}
         >
           Buy Now — $99
         </SpringPressable>
+        </div>
       </nav>
 
       {/* ── Hero ── */}
